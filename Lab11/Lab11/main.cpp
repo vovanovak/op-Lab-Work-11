@@ -12,10 +12,8 @@ void main(){
 	cout << "Lab11" << endl;
 	cout << "((a + b) * c - d)" << endl;
 
-	
 	init_numbers();
 
-	
 	TreeNode* tree = new TreeNode();
 	init_tree(tree);
 
@@ -39,7 +37,6 @@ void init_tree(TreeNode*& tree){
 	TreeNode* aPlusBMultiplyC = new TreeNode(aPlusB, new TreeNode(nullptr, nullptr, c), '*');
 	tree->left = aPlusBMultiplyC;
 	tree->right = new TreeNode(nullptr, nullptr, d);
-	
 }
 
 void init_numbers(){
