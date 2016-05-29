@@ -8,57 +8,18 @@ struct TreeNode {
 	double value;
 	
 
-	TreeNode(){
-		left = nullptr;
-		right = nullptr;
-		value = -1;
-	}
+	TreeNode();
 
-	TreeNode(TreeNode* left, TreeNode* right, double value){
-		this->left = left;
-		this->right = right;
-		this->value = value;
-	}
+	TreeNode(TreeNode* left, TreeNode* right, double value);
 
-	bool isLeaf(){
-		if (left != nullptr && right != nullptr){
-			return false;
-		}
-		else {
-			return true;
-		}
-	}
+	bool isLeaf();
 
-	double count(){
-		if (isLeaf()){
-			return value;
-		}
-		else {
-			
+	double count();
+	
+	void postorder(TreeNode* p, int indent = 0);
 
-			double countLeft = left->count();
-			double countRight = right->count();
-			double res;
-			char operation = (char)value;
-			switch (operation){
-			case '+':
-				res = countLeft + countRight;
-				break;
-			case '-':
-				res = countLeft - countRight;
-				break;
-			case '*':
-				res = countLeft * countRight;
-				break;
-			case '/':
-				res = countLeft / countRight;
-				break;
-			}
-			
-			std::cout << "y" << i << ": " << res << std::endl;
-			i++;
+	int get_max_leaf_height(TreeNode* n, int height = 1);
+	void print(int max_height, int indent, int y, int max);
 
-			return res;
-		}
-	}
+	void set_cursor_normal(int height);
 };

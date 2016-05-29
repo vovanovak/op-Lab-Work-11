@@ -1,4 +1,5 @@
 #include <iostream>
+#include <Windows.h>
 #include "TreeNode.h"
 using namespace std;
 
@@ -16,8 +17,11 @@ void main(){
 
 	TreeNode* tree = new TreeNode();
 	init_tree(tree);
+	
+	int height = tree->get_max_leaf_height(tree);
 
-	cout << "Total result: " << tree->count() << endl;
+	tree->print(height, 1, 0, height);
+	tree->set_cursor_normal(height);
 }
 
 void input_of_number(int &a) {
@@ -40,7 +44,7 @@ void init_tree(TreeNode*& tree){
 }
 
 void init_numbers(){
-	cout << "Enter a: ";
+	/*cout << "Enter a: ";
 	input_of_number(a);
 
 	cout << "Enter b: ";
@@ -50,5 +54,9 @@ void init_numbers(){
 	input_of_number(c);
 
 	cout << "Enter d: ";
-	input_of_number(d);
+	input_of_number(d);*/
+	a = 10;
+		b = 20;
+		c = 30;
+		d = 40;
 }
