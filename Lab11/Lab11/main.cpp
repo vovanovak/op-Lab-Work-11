@@ -22,7 +22,9 @@ void main(){
 
 	tree->print(height, 1, 0, height);
 	tree->set_cursor_normal(height);
-}
+	
+	cout << "Count: " << tree->count() << endl;
+} 
 
 void input_of_number(int &a) {
 	cin >> a;
@@ -44,7 +46,7 @@ void init_tree(TreeNode*& tree){
 }
 
 void init_numbers(){
-	/*cout << "Enter a: ";
+	cout << "Enter a: ";
 	input_of_number(a);
 
 	cout << "Enter b: ";
@@ -54,9 +56,5 @@ void init_numbers(){
 	input_of_number(c);
 
 	cout << "Enter d: ";
-	input_of_number(d);*/
-	a = 10;
-		b = 20;
-		c = 30;
-		d = 40;
+	input_of_number(d);
 }

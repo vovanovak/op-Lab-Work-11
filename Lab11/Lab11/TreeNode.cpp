@@ -27,7 +27,7 @@ bool TreeNode::isLeaf(){
 
 void TreeNode::postorder(TreeNode* p, int indent)
 {
-	/*if (p != NULL) {
+	if (p != NULL) {
 		if (p->right) {
 			postorder(p->right, indent + 4);
 		}
@@ -45,7 +45,7 @@ void TreeNode::postorder(TreeNode* p, int indent)
 			std::cout << std::setw(indent) << ' ' << " \\\n";
 			postorder(p->left, indent + 4);
 		}
-	}*/
+	}
 }
 
 double TreeNode::count(){
@@ -99,7 +99,7 @@ void TreeNode::set_cursor_normal(int height){
 	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD coord;
 	coord.X = 0;
-	coord.Y = (height + 1) * 3;
+	coord.Y = (height + 4) * 3;
 	SetConsoleCursorPosition(handle, coord);
 }
 
@@ -144,7 +144,7 @@ void TreeNode::print(int height, int indent, int y, int init_height){
 		coord.X = 2 * nodeHalfIndent * height - init_height + height;
 
 		SetConsoleCursorPosition(handle, coord);
-		cout << setfill('-') << setw(nodeHalfIndent * 5);
+		cout << setfill('-') << setw(nodeHalfIndent * 5 - 1);
 	}
 	
 	cout << "\n";
